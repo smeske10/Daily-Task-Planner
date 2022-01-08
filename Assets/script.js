@@ -3,8 +3,8 @@ var timeDisplayEl = $('#currentDay');
 var nextTaskDisplayEl = $('#nextTask');
 var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
 var currentHour = Number(moment().format('HH'));
-var scheduleHour = document.getElementsByClassName('hour');
-var mySelect = document.getElementById('validationCustom04');
+const scheduleHour = document.getElementsByClassName('hour');
+const mySelect = document.getElementById('validationCustom04');
 
 //Displays date & time in header
 
@@ -39,8 +39,8 @@ setInterval(displayTime,1000);
         //     };
         // };
 
-//Change Element Style based on current time
-var scheduleHourValue = scheduleHour.innerText;
+var scheduleHourValue = scheduleHour.innerText;//Change Element Style based on current time
+
 
 function checkTime(){
     [...scheduleHour].forEach(
@@ -72,3 +72,16 @@ setInterval(checkTime, (1000 * 60) * 5);
     //   }
 
     //   setInterval(displayNextTask, 1000);
+
+const task = document.getElementsByClassName('form-control')
+const wrapper = document.getElementsByClassName('wrapper')
+
+// for (var i = 0; i<saveBtn.length; i++) {
+    wrapper.addEventListener("submit", () => {
+        localStorage.setItem("task", task.innerText)        
+    });
+    // };
+
+
+    
+
