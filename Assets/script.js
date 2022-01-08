@@ -2,58 +2,55 @@
 var timeDisplayEl = $('#currentDay');
 var nextTaskDisplayEl = $('#nextTask');
 var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
-var currentHour = moment().format('hh a');
-var scheduleHour = document.getElementsByClassName('hour')
+var currentHour = moment().format('hh');
+var scheduleHour = document.getElementsByClassName('hour');
+var mySelect = document.getElementById('validationCustom04');
 
 //Displays date & time in header
+
+
 function displayTime() {
     timeDisplayEl.text(rightNow);
 }
-setInterval(displayTime, 1000);
 
-//Allow user to set start time
-// function defineRow() {
-//     let timeObj = {
-//         "5 AM" : 5,
-//         "6 AM" : 6,
-//         "7 AM" : 7,
-//         "8 AM" : 8,
-//         "9 AM" : 9,
-//         "10 AM" : 10,
-//         "11 AM" : 11,
-//         "12 PM" : 12,
-//         "1 PM" : 13,
-//         "2 PM" : 14,
-//         "3 PM" : 15,
-//         "4 PM" : 16,
-//         "5 PM" : 17,
-//         "6 PM" : 18,
-//         "7 PM" : 19,
-//         "8 PM" : 20,
-//         "9 PM" : 21,
-//         "10 PM" : 22,
-//     }
-// document.getElementsByClassName('.hour')
+setInterval(displayTime,1000);
 
-//Create time object for selecting work hours 
-// var localOption = new Option(item.text, JSON.stringify(item), false, false);
-// $("#workTime").append($(localOption));
+console.log(mySelect.value)
+//Allow user to set start time and edit Schedule
 
-var currentWorkTime = JSON.parse($("#competency").val());
+function defineRow() {
+    var scheduleTime = mySelect.value;
+    var rowValue = scheduleHour.createTextNode(scheduleTime);
 
+};
+
+
+//Set default start time
+var temp = "9";
+
+for(var i, j = 0; i = mySelect.options[j]; j++) {
+    if(i.value == temp) {
+        mySelect.selectedIndex = j;
+        break;
+    };
+}
+
+defineRow();
+mySelect.addEventListener("select", defineRow);
 
 //Change Element Style based on current time
 function checkTime(){
-if(currentHour > Option.value){
-    $(".hour").addClass("past");
-}
-else if(currentHour === Option.value){
-    $(".hour").addClass("present");
-}
-else{
-    $(".hour").addClass("future");
+    if(currentHour > scheduleHour.value){
+        $(".hour").addClass("past");
+    }
+    else if(currentHour === scheduleHour.value){
+        $(".hour").addClass("present");
+    }
+    else{
+        $(".hour").addClass("future");
+    };
 };
-}
+
 
 //Check time every 5 minutes
 setInterval(checkTime(), (1000 * 60) * 5);  
@@ -65,6 +62,3 @@ setInterval(checkTime(), (1000 * 60) * 5);
 //   }
 
 //   setInterval(displayNextTask, 1000);
-
-
-

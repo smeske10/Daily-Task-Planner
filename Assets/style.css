@@ -86,3 +86,13 @@ textarea {
   opacity: 1;
 }
 
+@media (max-width: 997px) {
+  .left {
+    width: 90%;
+    margin: 5px;
+  }
+  
+  .right {
+    width: 90%;
+  }
+}
