@@ -74,13 +74,15 @@ setInterval(checkTime, (1000 * 60) * 5);
     //   setInterval(displayNextTask, 1000);
 
 const task = document.getElementsByClassName('form-control')
-const wrapper = document.getElementsByClassName('wrapper')
+const saveBtn = document.getElementsByClassName('saveBtn')
 
-// for (var i = 0; i<saveBtn.length; i++) {
-    wrapper.addEventListener("submit", () => {
-        localStorage.setItem("task", task.innerText)        
+
+for (var i = 0; i<saveBtn.length; i++) {
+    saveBtn[i].addEventListener("click", () => {
+        localStorage.setItem("task", task.innerText)
+            console.log(task.innerText)
     });
-    // };
+};
 
 
     
