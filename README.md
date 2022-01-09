@@ -1,6 +1,8 @@
 # Homework5
  Third-Party APIs
 
+LINK: https://smeske10.github.io/Homework5/ 
+
 This homework will be done when:
 - Added a moment.js to log the current date/time in the jumbotron  
 - Added a jquery table that changes color based on time
@@ -16,3 +18,5 @@ There are 3 bonuses when time permits:
 - Allow user to set start time and edit row times
 - Display time to next task in card on left column
 - Create Form to save 3 Daily Goals in card on left column
+
+![screenshot of my workday scheduler](.\Assets\Screenshot-2022-01-08-211510.png)
