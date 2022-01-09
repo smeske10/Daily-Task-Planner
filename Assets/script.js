@@ -39,25 +39,22 @@ setInterval(displayTime,1000);
         //     };
         // };
 
-var scheduleHourValue = scheduleHour.innerText;//Change Element Style based on current time
-
+//Change Element Style based on current time
 
 function checkTime(){
     [...scheduleHour].forEach(
         function time (scheduleHour) {
-            var nowValue = parseInt(scheduleHour.innerHTML);
-
-            for (let i = 0; i<7; i++) {
+            var scheduleHourValue = scheduleHour.innerText;
+            var nowValue = parseInt(scheduleHourValue);
                 if(currentHour > nowValue){
-                    $(".hour").addClass("past");
-                }
-                else if(currentHour === nowValue){
-                    $(".hour").addClass("present");
+                    $(scheduleHour).addClass("past");
+                }                
+                else if (currentHour === nowValue){
+                    $(scheduleHour).addClass("present");
                 }
                 else{
-                    $(".hour").addClass("future");
-                };}
-            console.log(nowValue)
+                    $(scheduleHour).addClass("future");
+                }
         }
     );
 };
@@ -73,17 +70,15 @@ setInterval(checkTime, (1000 * 60) * 5);
 
     //   setInterval(displayNextTask, 1000);
 
-const task = document.getElementsByClassName('form-control')
+var task = document.getElementsByClassName('form-control')
 const saveBtn = document.getElementsByClassName('saveBtn')
+//Add event listener to save button and store text input on local
 
-
-for (var i = 0; i<saveBtn.length; i++) {
-    saveBtn[i].addEventListener("click", () => {
-        localStorage.setItem("task", task.innerText)
-            console.log(task.innerText)
-    });
+function saveTask(){
+    var taskValue = $("textarea").val();
+    localStorage.setItem("task", taskValue)
 };
 
+// };
 
-    
-
+$(".saveBtn").click(saveTask)
