@@ -72,13 +72,10 @@ setInterval(checkTime, (1000 * 60) * 5);
 
 var task = document.getElementsByClassName('form-control')
 const saveBtn = document.getElementsByClassName('saveBtn')
-//Add event listener to save button and store text input on local
-
+//Add event listener to save button and store text input on localStorage
 function saveTask(){
     var taskValue = $("textarea").val();
     localStorage.setItem("task", taskValue)
 };
-
-// };
 
 $(".saveBtn").click(saveTask)

@@ -7,3 +7,12 @@ This homework will be done when:
 - table rows will be reactive to typing and adding events to local storage 
 
 The Javascript have DOM elements for date & time using moment(). A function was added to display the time in an HTML element.
+
+A function was added to check current time and implement CSS class based on row time.
+
+A function was added to save a task on-click of button.
+
+There are 3 bonuses when time permits:
+- Allow user to set start time and edit row times
+- Display time to next task in card on left column
+- Create Form to save 3 Daily Goals in card on left column
